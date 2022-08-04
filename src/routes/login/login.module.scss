@@ -1,0 +1,109 @@
+@use '/src/styles/mixins/flexbox';
+@use '/src/styles/constants/colors';
+@use '/src/styles/constants/sizes';
+
+.loginWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+
+  .mainWrapper {
+    @include flexbox.flexbox(center, center);
+    width: 100%;
+    height: 100%;
+
+    .contentWrapper {
+      @include flexbox.flexbox(center, center);
+      flex-direction: column;
+      max-width: 428px;
+      padding: 50px 56px;
+      margin-top: 40px;
+      background-color: colors.$BG_G;
+      border-radius: sizes.$BORDER_RADIUS;
+
+      .loginButtonDisabled {
+        width: 100%;
+        height: 60px;
+        margin-top: 30px;
+        font-size: sizes.$MEDIUM;
+        color: colors.$GREY_300;
+        cursor: default;
+        background-color: colors.$GREY_50;
+        border: none;
+        border-radius: sizes.$BORDER_RADIUS;
+        transition: 0.2s;
+
+        &.activate {
+          color: colors.$GREY_50;
+          cursor: pointer;
+          background-color: colors.$PRIMARY;
+          opacity: 1;
+        }
+      }
+
+      .loginTitle {
+        font-size: sizes.$MEDIUM;
+      }
+
+      .inputWrapper {
+        position: relative;
+        width: 320px;
+        margin: 30px 0 10px;
+
+        label {
+          display: block;
+          align-self: flex-start;
+          padding-bottom: 16px;
+          font-size: sizes.$REGULAR;
+          color: colors.$GREY_300;
+        }
+
+        input {
+          width: 100%;
+          padding: 0 20px;
+          font-size: sizes.$REGULAR;
+          line-height: 50px;
+          color: colors.$GREY_800;
+          background-color: colors.$WHITE;
+          border: 1px solid colors.$GREY_100;
+          border-radius: sizes.$BORDER_RADIUS;
+        }
+
+        input::placeholder {
+          color: colors.$GREY_100;
+        }
+
+        button {
+          position: absolute;
+          right: 20px;
+          bottom: 12px;
+          line-height: 19px;
+        }
+      }
+
+      .blind {
+        display: none;
+      }
+
+      .checkWrapper {
+        display: flex;
+        align-items: center;
+        margin: 30px 0;
+        font-size: sizes.$SMALL;
+        line-height: 32px;
+        color: colors.$GREY_800;
+
+        input[type='checkbox'] {
+          display: none;
+        }
+
+        label {
+          display: inline-block;
+          margin-left: 8px;
+        }
+      }
+    }
+  }
+}

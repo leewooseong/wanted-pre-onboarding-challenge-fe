@@ -1,0 +1,7 @@
+@use 'sass:list';
+
+@mixin posCenterX($position: absolute) {
+  position: $position;
+  left: 50%;
+  transform: translateX(-50%);
+}

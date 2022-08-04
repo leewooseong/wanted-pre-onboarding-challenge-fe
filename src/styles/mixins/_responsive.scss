@@ -1,0 +1,9 @@
+@function getMinBreakpoint($media) {
+  @return $media;
+}
+
+@mixin before($media) {
+  @media only screen and (max-width: getMinBreakpoint($media)) {
+    @content;
+  }
+}
