@@ -1,9 +1,11 @@
 import styles from './Routes.module.scss';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
-import Login from './login';
+import Auth from './auth';
 // import Header from "./Header/index";
-import Main from './Main/index';
+// import Main from './main/index';
+import Login from './auth/login';
+import Join from './auth/join';
 
 const App = () => {
   // 로그인 처리가 필요
@@ -13,10 +15,10 @@ const App = () => {
   return (
     <div className={styles.appWrapper}>
       <Routes>
-        <Route path='/' element={<Login />} />
-        {/* <Route path="/" element={<Main />}>
-                    <Route path="*" element={<Navigate to="/404" replace />} />
-                </Route> */}
+        <Route path='/' element={<Auth />}>
+          <Route path='login' element={<Login />} />
+          <Route path='join' element={<Join />} />
+        </Route>
       </Routes>
     </div>
   );

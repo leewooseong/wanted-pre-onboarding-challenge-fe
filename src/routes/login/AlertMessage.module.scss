@@ -1,8 +1,0 @@
-@use '/src/styles/constants/sizes';
-@use '/src/styles/constants/colors';
-
-.alertMessage {
-  margin: 0 0 20px 2px;
-  font-size: sizes.$SMALL;
-  color: colors.$RED;
-}
