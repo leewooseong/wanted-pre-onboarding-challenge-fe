@@ -1,17 +1,17 @@
 import styles from './Routes.module.scss';
 import { Routes, Route, Navigate } from 'react-router-dom';
 
-import Main from './todoList';
 import Auth from './auth';
 import Login from './auth/login';
 import Join from './auth/join';
 import NotFound from './notFound';
+import TodoList from './todoList';
 
 const App = () => {
   return (
     <div className={styles.appWrapper}>
       <Routes>
-        <Route path='/' element={<Main />} />
+        <Route path='/' element={<TodoList />} />
         <Route path='/auth' element={<Auth />}>
           <Route path='login' element={<Login />} />
           <Route path='join' element={<Join />} />
