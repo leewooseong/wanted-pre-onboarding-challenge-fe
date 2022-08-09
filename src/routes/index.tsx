@@ -11,7 +11,9 @@ const App = () => {
   return (
     <div className={styles.appWrapper}>
       <Routes>
-        <Route path='/' element={<TodoList />} />
+        <Route path='/' element={<TodoList />}>
+          <Route path=':id' element={<TodoList />} />
+        </Route>
         <Route path='/auth' element={<Auth />}>
           <Route path='login' element={<Login />} />
           <Route path='join' element={<Join />} />

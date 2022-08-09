@@ -1,21 +1,21 @@
 $FLEX_MAP: (
-    "around": space-around,
-    "between": space-between,
-    "evenly": space-evenly,
-    "center": center,
-    "end": flex-end,
-    "start": flex-start,
-    "stretch": stretch,
-    "row": row,
-    "col": column,
+  'around': space-around,
+  'between': space-between,
+  'evenly': space-evenly,
+  'center': center,
+  'end': flex-end,
+  'start': flex-start,
+  'stretch': stretch,
+  'row': row,
+  'col': column,
 );
 
 @function _getFlexValue($key) {
-    @return map-get($FLEX_MAP, $key);
+  @return map-get($FLEX_MAP, $key);
 }
 
 @mixin flexbox($jc: center, $ai: center) {
-    display: flex;
-    align-items: _getFlexValue($ai);
-    justify-content: _getFlexValue($jc);
+  display: flex;
+  align-items: _getFlexValue($ai);
+  justify-content: _getFlexValue($jc);
 }
