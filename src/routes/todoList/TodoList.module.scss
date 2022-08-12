@@ -1,0 +1,96 @@
+@use 'src/styles/mixins/flexbox';
+@use 'src/styles/constants/colors';
+
+.todoListWrapper {
+  @include flexbox.flexbox(center, start);
+  flex-direction: column;
+  width: 60%;
+  padding: 30px;
+  background-color: colors.$WHITE;
+  border-radius: 10px;
+
+  h1 {
+    width: 100%;
+    margin-bottom: 40px;
+    font-size: 30px;
+    font-weight: bold;
+    border-bottom: 2px solid colors.$BLACK;
+  }
+
+  .todoListForm {
+    flex-direction: column;
+    width: 100%;
+    @include flexbox.flexbox(center, start);
+    margin-bottom: 20px;
+
+    label {
+      margin-bottom: 10px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    input {
+      margin-bottom: 20px;
+      font-size: 15px;
+
+      &::placeholder {
+        font-size: 15px;
+      }
+    }
+
+    .createButton {
+      padding: 5px;
+      margin-bottom: 10px;
+      font-size: 15px;
+      //   font-weight: bold;
+      background-color: colors.$GRAYE;
+      border-radius: 5px;
+    }
+  }
+
+  h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .titleListWrapper {
+    width: 100%;
+    margin-bottom: 20px;
+
+    .titleList {
+      @include flexbox.flexbox(center, start);
+      flex-direction: column;
+      gap: 5px;
+
+      button {
+        font-size: 14px;
+      }
+
+      a {
+        color: colors.$BLACK;
+        text-decoration: none;
+      }
+
+      .selectedTitle {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .selectedContentWrapper {
+    width: 100%;
+
+    .selectedContentHeader {
+      //   border-bottom: 1px solid colors.$BLACK;
+    }
+
+    .selectedContent {
+      width: 100%;
+      height: 200px;
+      padding: 10px;
+      border: 1px solid colors.$GREY_100;
+      border-radius: 5px;
+    }
+  }
+}
